@@ -1,0 +1,23 @@
+### P2 - Falta producto_id (422)
+POST http://127.0.0.1:8000/api/v1/pedidos
+Accept: application/json
+Content-Type: application/json
+
+--- Cuerpo enviado ---
+{
+  "cliente_id": 1,
+  "cantidad": 2,
+  "metodo_pago": "transferencia",
+  "tipo_entrega": "retiro_agencia"
+}
+
+--- Respuesta ---
+HTTP/1.1 422 Unprocessable Content
+{
+    "message":  "El campo producto id es obligatorio.",
+    "errors":  {
+                   "producto_id":  [
+                                       "El campo producto id es obligatorio."
+                                   ]
+               }
+}

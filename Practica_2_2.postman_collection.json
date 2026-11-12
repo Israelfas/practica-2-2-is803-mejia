@@ -1,0 +1,62 @@
+{
+  "info": {
+    "name": "Práctica 2.2 - Pedidos (Marcelo Mejía)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{ "key": "base", "value": "http://127.0.0.1:8000/api/v1" }],
+  "item": [
+    {
+      "name": "P1 - JSON válido (201)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Accept", "value": "application/json" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": "{{base}}/pedidos",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"cliente_id\": 1,\n  \"producto_id\": 1,\n  \"cantidad\": 2,\n  \"metodo_pago\": \"transferencia\",\n  \"tipo_entrega\": \"domicilio\",\n  \"direccion_entrega\": \"Av. 4 de Noviembre y Calle 115, Manta\",\n  \"observacion\": \"Llamar antes de entregar\"\n}"
+        }
+      }
+    },
+    {
+      "name": "P2 - Falta producto_id (422)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Accept", "value": "application/json" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": "{{base}}/pedidos",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"cliente_id\": 1,\n  \"cantidad\": 2,\n  \"metodo_pago\": \"transferencia\",\n  \"tipo_entrega\": \"retiro_agencia\"\n}"
+        }
+      }
+    },
+    {
+      "name": "P3 - cantidad con tipo incorrecto (422)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Accept", "value": "application/json" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": "{{base}}/pedidos",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"cliente_id\": 1,\n  \"producto_id\": 1,\n  \"cantidad\": \"dos\",\n  \"metodo_pago\": \"transferencia\",\n  \"tipo_entrega\": \"retiro_agencia\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Consultar pedido (200)",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Accept", "value": "application/json" }],
+        "url": "{{base}}/pedidos/1"
+      }
+    }
+  ]
+}

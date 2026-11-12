@@ -1,0 +1,31 @@
+### Consultar pedido 1 (200)
+GET http://127.0.0.1:8000/api/v1/pedidos/1
+Accept: application/json
+
+--- Cuerpo enviado ---
+(sin cuerpo)
+
+--- Respuesta ---
+HTTP/1.1 200 OK
+{
+    "data":  {
+                 "pedido_id":  1,
+                 "codigo":  "PED-000001",
+                 "estado":  "pendiente",
+                 "cliente_id":  1,
+                 "producto":  {
+                                  "id":  1,
+                                  "nombre":  "Licuadora Oster - caja golpeada",
+                                  "nivel_danio":  "leve"
+                              },
+                 "cantidad":  2,
+                 "precio_unitario":  24.5,
+                 "total":  49.0,
+                 "moneda":  "USD",
+                 "metodo_pago":  "transferencia",
+                 "tipo_entrega":  "domicilio",
+                 "direccion_entrega":  "Av. 4 de Noviembre y Calle 115, Manta",
+                 "observacion":  "Llamar antes de entregar",
+                 "fecha_registro":  "2026-11-12T19:08:47+00:00"
+             }
+}

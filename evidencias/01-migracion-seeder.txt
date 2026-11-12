@@ -1,0 +1,10 @@
+﻿PS> php artisan migrate
+
+   INFO  Running migrations.  
+
+  2026_11_12_000000_create_pedidos_tables ............................................................... 11.55ms DONE
+
+PS> php artisan db:seed --class=Practica22Seeder
+
+   INFO  Seeding database.  
+

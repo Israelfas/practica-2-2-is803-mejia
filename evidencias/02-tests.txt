@@ -1,0 +1,10 @@
+﻿PS> php artisan test --filter=PedidoContratoTest
+
+   PASS  Tests\Feature\PedidoContratoTest
+  ✓ p1 json valido devuelve 201                                                                                  0.29s  
+  ✓ p2 falta campo obligatorio devuelve 422                                                                      0.02s  
+  ✓ p3 tipo incorrecto no persiste                                                                               0.02s  
+
+  Tests:    3 passed (31 assertions)
+  Duration: 0.50s
+

@@ -1,0 +1,14 @@
+### Consultar pedido 2 - no persistido (404)
+GET http://127.0.0.1:8000/api/v1/pedidos/2
+Accept: application/json
+
+--- Cuerpo enviado ---
+(sin cuerpo)
+
+--- Respuesta ---
+HTTP/1.1 404 Not Found
+{
+    "message":  "No query results for model [App\\Models\\Pedido] 2"
+}
+
+(Con APP_DEBUG=true Laravel añade además "exception", "file", "line" y "trace"; se omiten aquí.)

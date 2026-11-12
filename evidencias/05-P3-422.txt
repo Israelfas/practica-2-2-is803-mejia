@@ -1,0 +1,24 @@
+### P3 - cantidad con tipo incorrecto (422)
+POST http://127.0.0.1:8000/api/v1/pedidos
+Accept: application/json
+Content-Type: application/json
+
+--- Cuerpo enviado ---
+{
+  "cliente_id": 1,
+  "producto_id": 1,
+  "cantidad": "dos",
+  "metodo_pago": "transferencia",
+  "tipo_entrega": "retiro_agencia"
+}
+
+--- Respuesta ---
+HTTP/1.1 422 Unprocessable Content
+{
+    "message":  "El campo cantidad debe ser un número entero.",
+    "errors":  {
+                   "cantidad":  [
+                                    "El campo cantidad debe ser un número entero."
+                                ]
+               }
+}
